@@ -1,4 +1,6 @@
 <script>
+    export const csr = true
+
     import { imageStatus, facesDetected } from '$lib/stores.js'
 
     import StepUpload from '$lib/components/StepUpload.svelte'
