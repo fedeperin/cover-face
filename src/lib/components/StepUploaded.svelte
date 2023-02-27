@@ -1,13 +1,18 @@
 <script>
-    import 'two-up-element'
     import { originalImage, modifiedImage } from '$lib/stores.js'
+    import { onMount } from 'svelte'
 
     let originalImageReference
     let originalWidth, originalHeight
+
     const handleImageLoad = () => {
         originalHeight = originalImageReference.naturalHeight
         originalWidth = originalImageReference.naturalWidth
     }
+
+    onMount(async () => {
+        await import('two-up-element')
+    })
 </script>
 
 <two-up>
