@@ -36,9 +36,11 @@ export const initDropzone = () => {
         dropzone.on('dragleave', () => dragging.set(false))
     
         dropzone.on('addedfile', file => {
-            console.dir(file)
-            if(file.accepted == true) {
+            console.log(JSON.stringify(file))
+            if(file.upload.total != 0) {
                 fileSent.set(true)
+            }else {
+                dragging.set(false)
             }
         })
     
