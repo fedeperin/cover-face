@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+:root {
+    --primary-color: #3A98B9;
+    --secondary-color: #212527;
+    --light-color: #cacaca;
+    --hard-light-color: #555;
+    --body-width: 1000px;
+    --card-number: 4;
+}
+
+body {
+    background: #ececec;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+	width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #86bbce;
+	border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --body-width: 700px;
+        --card-number: 3;
+    }
+}
