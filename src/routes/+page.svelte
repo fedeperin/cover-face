@@ -1,5 +1,5 @@
 <script>
-    export const csr = true
+    export const ssr = false
 
     import { imageStatus, facesDetected } from '$lib/stores.js'
 
