@@ -4,32 +4,32 @@
     import { faceCoverData } from '$lib/cloudinary.js'
 	import { onMount } from 'svelte'
 
+    let faceCoverDataCopy = [...faceCoverData]
     let cardNumber = 4
     let innerWidth
 
-    selectedMode.set(faceCoverData[0].name)
+    selectedMode.set(faceCoverDataCopy[0].name)
 
     const showMore = () => {
         modesExpanded.update(prevMode => !prevMode)
     }
-
-    $: innerWidth, () => {
-        console.log(innerWidth)
+    
+    const handleResize = () => {
         if(innerWidth < 1200) {
             cardNumber = 3
         } else {
             cardNumber = 4
         }
 
-        faceCoverData = faceCoverData
+        faceCoverDataCopy = faceCoverDataCopy
     }
 </script>
 
-<svelte:window bind:innerWidth={ innerWidth } />
+<svelte:window bind:innerWidth={ innerWidth } on:resize={ handleResize } />
 
 <h3>Choose Face Cover: </h3>
 <div class="mode-select">
-    {#each faceCoverData as { name, displayName, url }, i}
+    {#each faceCoverDataCopy as { name, displayName, url }, i}
         {#if i < cardNumber || ($modesExpanded && i >= cardNumber)}
             <ModeCard { name } { displayName } { url } />
         {/if}
