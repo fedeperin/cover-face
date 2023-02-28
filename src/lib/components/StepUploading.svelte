@@ -13,7 +13,7 @@
         justify-content: center;
         flex-direction: column;
         width: var(--body-width);
-        height: 350px;
+        height: 320px;
         border: 2px solid var(--light-color);
         border-radius: 7px;
     }
