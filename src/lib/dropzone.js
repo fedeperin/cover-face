@@ -73,9 +73,9 @@ export const initDropzone = () => {
                 )
                 originalImage.set(url)
             }else {
-                imageStatus.update(prevImgStatus => {
+                imageStatus.update(() => {
                     return {
-                        status: prevImgStatus.status,
+                        status: 'READY',
                         error: 'No Faces Detected'
                     }
                 })
