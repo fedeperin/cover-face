@@ -23,6 +23,10 @@
 
         faceCoverDataCopy = faceCoverDataCopy
     }
+
+    onMount(() => {
+        handleResize()
+    })
 </script>
 
 <svelte:window bind:innerWidth={ innerWidth } on:resize={ handleResize } />
