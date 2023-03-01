@@ -11,9 +11,9 @@
     <form action={ cloudinaryUploadURL } id="dropzone" class="rectangle-container">
         <i class="bx bxs-cloud-upload { $dragging ? 'darker': '' }" />
         <p class={ $dragging ? 'darker': '' }>Drag and Drop image here</p>
-        <span class={ $dragging ? 'darker big': 'big' }>or</span>
+        <span class={ $dragging ? 'big darker': 'big' }>or</span>
         <button>Browse Files</button>
-        <span class="small">Accepted File Types: .jpg, .png and .webp</span>
+        <span class={ $dragging ? 'small darker': 'small' }>Accepted File Types: .jpg, .png and .webp</span>
     </form>
 {:else}
     <div class="rectangle-container rectangle-uploaded">
@@ -71,19 +71,19 @@
         font-weight: bold;
     }
 
-    form span.big {
+    form .big {
         font-size: 30px;
         font-weight: bold;
         color: var(--light-color);
     }
     
-    form span.small {
+    form .small {
         font-size: 17px;
         margin-top: 15px;
         color: var(--light-color);
     }
 
-    .darker {
+    form .darker {
         color: var(--hard-light-color);
     }
 
