@@ -83,11 +83,9 @@ export const initDropzone = () => {
         })
     
         dropzone.on('error', (file, response) => {
-            imageStatus.update(prevImgStatus => {
-                return {
-                    status: prevImgStatus.status,
-                    error: response
-                }
+            imageStatus.set({
+                status: 'READY',
+                error: response
             })
 
             console.error(response)
