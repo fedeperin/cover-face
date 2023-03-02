@@ -15,7 +15,9 @@
     }
     
     const handleResize = () => {
-        if(innerWidth < 1200) {
+        if(innerWidth < 900) {
+            cardNumber = 2
+        } else if(innerWidth < 1200) {
             cardNumber = 3
         } else {
             cardNumber = 4

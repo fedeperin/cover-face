@@ -1,5 +1,5 @@
 <script>
-    import { imageStatus, facesDetected } from '$lib/stores.js'
+    import { imageStatus } from '$lib/stores.js'
 
     import StepUpload from '$lib/components/StepUpload.svelte'
     import StepUploading from '$lib/components/StepUploading.svelte'
@@ -17,6 +17,5 @@
         <StepUploading />
     {:else if $imageStatus.status == 'SUCCESS'}
         <StepUploaded />
-        <p>Faces Detected: { $facesDetected }</p>
     {/if}
 </main>

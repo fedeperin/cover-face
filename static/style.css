@@ -40,3 +40,17 @@ body::-webkit-scrollbar-thumb {
         --card-number: 3;
     }
 }
+
+@media (max-width: 900px) {
+    :root {
+        --body-width: 500px;
+        --card-number: 2;
+    }
+}
+
+@media (max-width: 550px) {
+    :root {
+        --body-width: 90vw;
+        --card-number: 1;
+    }
+}
