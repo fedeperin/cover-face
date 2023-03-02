@@ -48,4 +48,15 @@
     .faces-detected {
         font-size: 20px;
     }
+
+    @media (max-width: 550px) {
+        .data {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .faces-detected {
+            margin-bottom: 10px;
+        }
+    }
 </style>
