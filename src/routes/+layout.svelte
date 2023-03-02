@@ -3,6 +3,7 @@
     import toast, { Toaster } from 'svelte-french-toast'
     import Nav from '$lib/components/Nav.svelte'
     import Footer from '$lib/components/Footer.svelte'
+    import LoadingSpinner from '$lib/components/LoadingSpinner.svelte'
 
     imageStatus.subscribe(({ error, status }) => {
         if(status == 'UPLOADING') {
@@ -15,6 +16,7 @@
     })
 </script>
 
+<LoadingSpinner />
 <Toaster />
 
 <Nav />
