@@ -83,6 +83,9 @@ export const initDropzone = () => {
         })
     
         dropzone.on('error', (file, response) => {
+            fileSent.set(false)
+            dragging.set(false)
+
             imageStatus.set({
                 status: 'READY',
                 error: response
