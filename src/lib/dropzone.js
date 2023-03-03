@@ -63,6 +63,10 @@ export const initDropzone = () => {
             if(numFacesDetected != 0) {
                 const { secure_url: url, public_id: publicId } = response
     
+                const urlSplitted = url.split('/')
+                urlSplitted[urlSplitted.length - 3] = 'e_trim'
+                const UrlTrim = urlSplitted.join('/')
+
                 modifiedImage.set(faceCoverData.filter(obj => obj.name == get(selectedMode))[0].url(publicId))
     
                 imageStatus.set(
@@ -71,7 +75,7 @@ export const initDropzone = () => {
                         error: null
                     }
                 )
-                originalImage.set(url)
+                originalImage.set(UrlTrim)
             }else {
                 imageStatus.update(() => {
                     return {
