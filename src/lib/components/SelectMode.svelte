@@ -35,9 +35,9 @@
 
 <h3>Choose Face Cover: </h3>
 <div class="mode-select">
-    {#each faceCoverDataCopy as { name, displayName, url }, i}
+    {#each faceCoverDataCopy as data, i}
         {#if i < cardNumber || ($modesExpanded && i >= cardNumber)}
-            <ModeCard { name } { displayName } { url } />
+            <ModeCard { data } />
         {/if}
     {/each}
 </div>
